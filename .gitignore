@@ -1,6 +1,8 @@
 # 공공기관 데이터
 /br/data
 
+.ipynb_checkpoints
+*.ipynb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
