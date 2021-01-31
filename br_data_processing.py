@@ -24,12 +24,17 @@ def main():
 
     # 직원 명부 데이터 전처리
     pb_df = br_staffer.processDepartmentDataFrame(sh_match_department_staffer)
+    # 모든 column이 NaN인 행 삭제
+    pb_df = pb_df.dropna(axis=0, how='all')
+    # 중복 데이터 제거
+    
 
     # 전체 사용자 정보와 조직 정보를 left outer로 merge
     d_all_user_merged_df = pd.merge(left=all_user_data_df, right=d_df, how='left', on='조직코드')
     # 중복 컬럼명 변경
-    d_all_user_merged_df.rename(columns={'이름_x':'이름', '이름_y':'부서이름'}, inplace=True)
+    d_all_user_merged_df.rename(columns={'이름_x': '이름', '이름_y': '부서이름'}, inplace=True)
 
+    # PhoneBook 데이터와 merge
     print(d_all_user_merged_df.head(30))
 
 
