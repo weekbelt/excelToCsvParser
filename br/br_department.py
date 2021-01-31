@@ -10,6 +10,8 @@ def conditionFunc(departmentName):
         return departmentName + "주민센터"
     elif departmentName[-1:] == '읍':
         return departmentName + "사무소"
+    elif departmentName == '시장':
+        return departmentName + "실"
     else:
         return departmentName
 
@@ -25,3 +27,5 @@ def processDepartmentDataFrame(ddf):
     # 필요 없는 컬럼 지우기
     ddf = removeColumn(ddf)
     return ddf
+
+
