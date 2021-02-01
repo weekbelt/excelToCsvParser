@@ -27,5 +27,3 @@ def processDepartmentDataFrame(ddf):
     # 필요 없는 컬럼 지우기
     ddf = removeColumn(ddf)
     return ddf
-
-
